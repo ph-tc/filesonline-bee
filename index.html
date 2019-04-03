@@ -637,11 +637,34 @@
       }
     }
 
+    @media screen and (max-height: 240px) and (orientation: landscape) {
+      .main .inner {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .main .btn-wrapper {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+      }
+    }
+
 
     /*FOOTER--------------------------------------------------------------------*/
 
     .footer {
       display: table-row;
+    }
+
+    .footer p {
+      padding: 2px;
     }
 
     .footer p,
