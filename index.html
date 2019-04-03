@@ -637,7 +637,7 @@
       }
     }
 
-    @media screen and (max-height: 233px) and (orientation: landscape) {
+    @media screen and (max-height: 240px) and (orientation: landscape) {
       .main .inner {
         display: table-cell;
         vertical-align: middle;
@@ -737,9 +737,9 @@
           var buttonWrap = document['getElementsByClassName']('btn-wrapper')[0];
           footer['style']['bottom'] = "auto";
           footer['style']['top'] = (window['innerHeight'] - footer.offsetHeight) + 'px';
-          // if ((window['innerHeight'] > 212) && (window['innerHeight'] < 233)) {
-          //     buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-37) + 'px';
-          // } else { buttonWrap['style']['marginTop'] = 0; }
+          if ((window['innerHeight'] > 212) && (window['innerHeight'] < 233)) {
+              buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-37) + 'px';
+          } else { buttonWrap['style']['marginTop'] = 0; }
 
           document.body.style.height = window.innerHeight + 'px';
       }
