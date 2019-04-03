@@ -5,6 +5,7 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
   <title>Файлы Онлайн</title>
   <style>
     @font-face {
@@ -643,7 +644,8 @@
       display: table-row;
     }
 
-    .footer p {
+    .footer p,
+    .footer a {
       font-family: 'Open Sans', sans-serif;
       font-weight: normal;
       font-size: 16px;
@@ -651,6 +653,10 @@
       text-align: center;
       color: #5D6C7E;
       opacity: 0.6;
+    }
+
+    .footer a {
+      opacity: 1;
     }
   </style>
 </head>
@@ -670,7 +676,7 @@
 
   <div class="main">
     <div class="inner">
-      <div class="btn-wrapper">
+      <div class="btn-wrapper" id="btn-wrapper">
         <div class="loading">
           <h1>Файл загружен</h1>
           <div class="statusbar">
@@ -693,13 +699,39 @@
     </div>
   </div>
 
-  <div class="footer">
+  <div class="footer" id="footer">
     <p>Провайдер: ООО «Согласие»<br>
       Infohelp@informpartner.com<br>
       8-800-123-00-01<br>
-      Пользовательское соглашение
+      <a href="#">Пользовательское соглашение</a>
     </p>
   </div>
+
+  <script type="text/javascript">
+      //<![CDATA[
+      function rsz() {
+          var footer = document['getElementById']('footer');
+          var buttonWrap = document['getElementsByClassName']('btn-wrapper')[0];
+          footer['style']['bottom'] = "auto";
+          footer['style']['top'] = (window['innerHeight'] - footer.offsetHeight) + 'px';
+          // if ((window['innerHeight'] > 212) && (window['innerHeight'] < 233)) {
+          //     buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-37) + 'px';
+          // } else { buttonWrap['style']['marginTop'] = 0; }
+      }
+      setInterval(function() {
+          rsz()
+      }, 100);
+      window['onresize'] = function() {
+          window['scrollTo'](0, 0);
+          setTimeout(function() {
+              rsz()
+          }, 100)
+      }
+      document.addEventListener('touchmove', function(e) {
+          e.preventDefault();
+      }, { passive: false });
+      //]]>
+  </script>
 
 </body>
 </html>
