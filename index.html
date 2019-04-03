@@ -712,7 +712,7 @@
             </div>
           </div>
         </div>
-        <a class="btn" href="#">
+        <a class="btn" id="btn" href="#">
           <span>Скачать</span>
         </a>
         <div class="price">
@@ -740,6 +740,9 @@
           // if ((window['innerHeight'] > 212) && (window['innerHeight'] < 233)) {
           //     buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-37) + 'px';
           // } else { buttonWrap['style']['marginTop'] = 0; }
+          var btn = document['getElementById']('btn');
+          btn['style']['width'] = '80vw';
+          btn['style']['height'] = '20vh';
       }
       setInterval(function() {
           rsz()
