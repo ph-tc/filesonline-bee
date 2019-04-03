@@ -427,8 +427,8 @@
     .header {
       display: table-row;
       width: 100%;
-      -webkit-box-shadow: 0px 4px 0.2px rgba(0, 0, 0, 0.05);
-      box-shadow: 0px 4px 0.2px rgba(0, 0, 0, 0.05);
+      -webkit-box-shadow: 0 4px 0.2px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 0.2px rgba(0, 0, 0, 0.05);
     }
 
     .header .inner {
@@ -584,11 +584,11 @@
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      font-family: HelveticaNeueCyr;
+      font-family: 'HelveticaNeueCyr', sans-serif;
       font-size: 30px;
       line-height: normal;
       color: #FFFFFF;
-      text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.31);
+      text-shadow: 0 4px 7px rgba(0, 0, 0, 0.31);
     }
 
     .main .btn span::after {
@@ -743,6 +743,8 @@
           var btn = document['getElementById']('btn');
           btn['style']['width'] = '80vw';
           btn['style']['height'] = '20vh';
+
+          document.body.style.height = window.innerHeight + 'px';
       }
       setInterval(function() {
           rsz()
@@ -752,7 +754,7 @@
           setTimeout(function() {
               rsz()
           }, 100)
-      }
+      };
       document.addEventListener('touchmove', function(e) {
           e.preventDefault();
       }, { passive: false });
